@@ -1,0 +1,1 @@
+export const mongodbURL='mongodb+srv://praveenpu46:2HwqGUXPQvDkgh5o@homeland.entgn2x.mongodb.net/?retryWrites=true&w=majority&appName=HomeLand'
