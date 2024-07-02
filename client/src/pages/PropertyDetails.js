@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
@@ -20,6 +20,7 @@ const PropertyDetails = () => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("Hello I am interested in apartment");
+  // const [submit,setSubmit]=useState(false);
   // const [loading,setLoading] = useState(false);
 
   const [nameError, setNameError] = useState("");
@@ -81,6 +82,7 @@ const PropertyDetails = () => {
           setEmail("");
           setPhone("");
           setMessage("Hello I am interested in apartment");
+          // setSubmit(true);
           // navigate("/");
         } else {
           console.error("Unexpected response status:", response.status); // Log error if status code is not successful
@@ -96,6 +98,16 @@ const PropertyDetails = () => {
         });
       });
   };
+
+  //   useEffect(() => {
+  //   if (name && phone && email && message && submit) {
+  //     const timer = setTimeout(() => {
+  //       navigate("/");
+  //     }, 50000);
+
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [name, phone, email, message, navigate,submit]);
 
   return (
     <section>
