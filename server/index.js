@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 app.use(cors(
   {
-    origin:[""],
+    origin:["https://home-land-tawny.vercel.app/"],
     methods:["POST","GET"],
     credentials:true
   }
