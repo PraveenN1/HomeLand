@@ -10,13 +10,7 @@ const PORT=process.env.port||5000;
 
 app.use(bodyParser.json());
 
-app.use(cors(
-  {
-    origin:["https://home-land-tawny.vercel.app/"],
-    methods:["POST","GET"],
-    credentials:true
-  }
-));
+app.use(cors());
 app.get('/',(req,res)=>{
   res.send('Welcome to the home page!');
 })
