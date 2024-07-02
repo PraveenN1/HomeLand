@@ -10,7 +10,13 @@ const PORT=process.env.port||5000;
 
 app.use(bodyParser.json());
 
-app.use(cors());
+app.use(cors(
+  {
+    origin:[""],
+    methods:["POST","GET"],
+    credentials:true
+  }
+));
 app.get('/',(req,res)=>{
   res.send('Welcome to the home page!');
 })
