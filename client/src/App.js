@@ -14,7 +14,7 @@ const App = () => {
   const hideHeaderFooter = location.pathname === '/login' || location.pathname === '/signup';
 
   return (
-    <div className='max-w-[1440px] mx-auto bg-slate-100'>
+    <div className='w-full mx-auto bg-slate-100'>
       {!hideHeaderFooter && <Header />}
       <Routes>
         <Route path='/' element={<HomePage />} />
