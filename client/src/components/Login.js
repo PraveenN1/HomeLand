@@ -12,7 +12,7 @@ const Login = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5500/", {
+      const res = await axios.post("http://localhost:5000/login", {
         email,
         password,
       });
@@ -30,12 +30,12 @@ const Login = () => {
   return (
     <div>
       <div className="flex justify-center items-center h-screen bg-violet-100 ">
-        <div className="bg-purple-300 px-5 py-[122px] shadow-md rounded-l-lg">
+        <div className="bg-purple-300 px-5 py-[122px] shadow-md hidden md:block">
           <Link to="/">
             <img src={Logo} alt="Logo" />
           </Link>
         </div>
-        <div className="bg-white shadow-md rounded-r-lg px-10 pt-10 pb-6  max-w-md">
+        <div className=" bg-white  px-10 pt-10 pb-6 w-[25rem] shadow-md ">
           <h1 className="text-2xl font-semibold text-center mb-4">Login</h1>
           {error && (
             <p className="text-red-500 text-sm text-center mb-4">{error}</p>

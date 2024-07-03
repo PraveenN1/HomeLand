@@ -13,7 +13,7 @@ const Signup = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5500/signup", {
+      const res = await axios.post("http://localhost:5000/signup", {
         name,
         email,
         password,
@@ -29,12 +29,12 @@ const Signup = () => {
 
   return (
     <div className="flex justify-center items-center h-screen bg-violet-100">
-      <div className="bg-purple-300 px-5 py-[153px] shadow-md  hidden md:block">
+      <div className="bg-purple-300 px-5 py-[153px] shadow-md  hidden md:inline-flex">
           <Link to="/">
             <img src={Logo} alt="Logo" />
           </Link>
         </div>
-      <div className="bg-white  shadow-md  px-6 py-10 max-w-md w-1/2">
+      <div className=" bg-white  shadow-md  px-6 py-10  w-[25rem]">
         <h1 className="text-2xl font-semibold text-center mb-4">Sign Up</h1>
         {error && (
           <p className="text-red-500 text-sm text-center mb-4">{error}</p>
