@@ -1,5 +1,6 @@
-import express from 'express';
+import express, { application } from 'express';
 import { _response } from './responseModel.js';
+import User from '../server/userModel.js';
 const router = express.Router();
 
 //Route to save the responses from the customer
@@ -20,7 +21,15 @@ router.post("/:id", async(req, res) => {
         return res.status(201).send(__response);
     }
     catch{(error)=>console.log(error)}
-    res.status(500).send({message:error.message});
+    res.status(500).send(error);
 })
+
+router.post('/signup',(req,res)=>{
+    User.create(req.body)
+    .then(data=>res.json(data))
+    .catch(err=>res.json(err))
+})
+
+router
 
 export default router;
