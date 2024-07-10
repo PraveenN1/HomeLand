@@ -13,9 +13,9 @@ app.use(bodyParser.json());
 
 app.use(cors(
   {
-    origin:["https://home-land-2z2k.vercel.app"],
-    methods:["POST","GET"],
-    credentials:true
+  origin:["https://home-land-frpu.vercel.app"],
+  methods:["POST","GET"],
+  credentials:true
   }
 ));
 
