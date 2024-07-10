@@ -69,7 +69,7 @@ const PropertyDetails = () => {
     };
 
     axios
-      .post(`https://home-land-frpu.vercel.app/property/${data.id}`, data)
+      .post(`https://home-land-mu.vercel.app/property/${data.id}`, data)
       .then((response) => {
         console.log(response); // Log the response from the server
 
