@@ -1,6 +1,6 @@
 import express, { application } from 'express';
 import { _response } from './responseModel.js';
-import User from '../server/userModel.js';
+
 const router = express.Router();
 
 //Route to save the responses from the customer
