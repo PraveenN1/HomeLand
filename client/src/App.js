@@ -1,11 +1,12 @@
-import React from 'react';
+import React,{Suspense} from 'react';
 import { Route, Routes, useLocation } from "react-router-dom";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/Home';
-import PropertyDetails from './pages/PropertyDetails';
+const PropertyDetails = React.lazy(() => import('./pages/PropertyDetails'));
 import Login from './components/Login';
 import SignUp from './components/Signup';
+import Loading from './components/Loading';
 
 const App = () => {
   const location = useLocation();
@@ -18,7 +19,11 @@ const App = () => {
       {!hideHeaderFooter && <Header />}
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/property/:id' element={<PropertyDetails />} />
+        <Route path='/property/:id' element={
+          <Suspense fallback={Loading}>
+          <PropertyDetails />
+          </Suspense>
+          } />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
       </Routes>
