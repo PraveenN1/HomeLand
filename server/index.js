@@ -11,7 +11,13 @@ const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 
-app.use(cors());
+app.use(cors(
+  {
+  origin:["https://home-land-frpu.vercel.app"],
+  methods:["POST","GET"],
+  credentials:true
+  }
+));
 
 app.get('/', (req, res) => {
   res.send('Welcome to the home page!');
