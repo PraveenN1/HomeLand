@@ -15,7 +15,7 @@ app.use(express.json());
 
 // CORS configuration
 app.use(cors({
-  origin: ["https://home-land-frpu.vercel.app","http://localhost:3000"],
+  origin: ["https://home-land-frontend.vercel.app","http://localhost:3000"],
   methods: ["POST", "GET"],
   credentials: true
 }));
