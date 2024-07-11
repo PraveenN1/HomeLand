@@ -7,6 +7,7 @@ const PropertyDetails = React.lazy(() => import('./pages/PropertyDetails'));
 import Login from './components/Login';
 import SignUp from './components/Signup';
 import Loading from './components/Loading';
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   const location = useLocation();
@@ -16,6 +17,7 @@ const App = () => {
 
   return (
     <div className='w-full mx-auto bg-slate-100'>
+       <ScrollToTop />
       {!hideHeaderFooter && <Header />}
       <Routes>
         <Route path='/' element={<HomePage />} />
