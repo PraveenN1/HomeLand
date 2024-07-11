@@ -3,12 +3,11 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/Home';
-const PropertyDetails = React.lazy(() => import('./pages/PropertyDetails'));
 import Login from './components/Login';
 import SignUp from './components/Signup';
 import Loading from './components/Loading';
 import ScrollToTop from './components/ScrollToTop';
-
+const PropertyDetails = React.lazy(() => import('./pages/PropertyDetails'));
 const App = () => {
   const location = useLocation();
 
