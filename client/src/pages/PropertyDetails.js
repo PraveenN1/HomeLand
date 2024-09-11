@@ -7,6 +7,7 @@ import { housesData } from "../data";
 import { BiBath, BiArea, BiBed } from "react-icons/bi";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {ImSpinner2} from 'react-icons/im'
 
 const PropertyDetails = () => {
   //get the house id
@@ -21,7 +22,7 @@ const PropertyDetails = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("Hello I am interested in apartment");
   // const [submit,setSubmit]=useState(false);
-  // const [loading,setLoading] = useState(false);
+  const [loading,setLoading] = useState(false);
 
   const [nameError, setNameError] = useState("");
   const [phoneError, setPhoneError] = useState("");
@@ -108,6 +109,10 @@ const PropertyDetails = () => {
   //     return () => clearTimeout(timer);
   //   }
   // }, [name, phone, email, message, navigate,submit]);
+
+  if(loading){
+    return(<ImSpinner2 className='mx-auto animate-spin text-violet-700 text-4xl mt-[200px]'/>)
+  }
 
   return (
     <section>
